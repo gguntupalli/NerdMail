@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bignerdranch.android.nerdmail.R;
 import com.bignerdranch.android.nerdmailservice.Email;
 
 import java.util.List;
@@ -23,9 +22,8 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailViewHolder> {
 
     @Override
     public EmailViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.list_item_email, parent, false);
-        return new EmailViewHolder(mContext, view);
+        View view = new EmailListItemView(mContext);
+        return new EmailViewHolder(view);
     }
 
     @Override
